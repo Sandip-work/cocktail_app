@@ -4,7 +4,7 @@
             "outputFile": "com.example.cocktail.app-mergeDebugResources-9:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/bhavini-pc/sandip_work/cocktail_app/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/bhavini-pc/sandip_work/cocktail_app_git/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
