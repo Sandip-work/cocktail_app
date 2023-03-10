@@ -1,11 +1,9 @@
 
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:morphable_shape/morphable_shape.dart';
+// import 'package:morphable_shape/morphable_shape.dart';
 import 'package:shape_of_view_null_safe/shape_of_view_null_safe.dart';
 import 'dart:developer';
-
-import 'package:styled_widget/styled_widget.dart' as style;
+// import 'package:styled_widget/styled_widget.dart' as style;
 
 class Cocktail extends StatelessWidget {
   const Cocktail({super.key});
@@ -347,51 +345,6 @@ class _French75State extends State<French75> {
               ),
             ),
           ),
-         /*Positioned(
-           top: 220,
-           left: 120,
-           child: Transform.rotate(
-             // quarterTurns: 6,
-             angle: -240,
-             // angle: 35,
-             child: Container(
-               height: 175,
-               width: 165,
-               decoration: BoxDecoration(
-                 border: Border.all(color: Colors.white, width: 5.0),
-                 borderRadius: const BorderRadius.only(
-                   topLeft: Radius.circular(60.0),
-                   topRight: Radius.circular(35.0),
-                   bottomRight: Radius.circular(60.0),
-                   bottomLeft: Radius.circular(35.0),
-                 ),
-                 // color: Colors.red,
-               ),
-               child: ClipRRect(
-                   borderRadius: const BorderRadius.only(
-                     topLeft: Radius.circular(60.0),
-                     topRight: Radius.circular(35.0),
-                     bottomRight: Radius.circular(60.0),
-                     bottomLeft: Radius.circular(35.0),
-                   ),
-                 child: SizedBox(
-                   height: 175,
-                   width: 165,
-                   child: RotationTransition(
-                     turns: ,
-                     // angle: 240,
-                    // quarterTurns: (0.91).toInt(),
-                     child: Image.asset(
-                         'assets/images/french75.jpg',
-                       fit: BoxFit.fill,
-                       // scale: 15.0,
-                     ),
-                   ),
-                 ),
-               ),
-             ),
-           ),
-         ),*/
 
           Positioned(
             top: 230,
@@ -421,141 +374,8 @@ class _French75State extends State<French75> {
               ),
             ),
           ),
-          /*Positioned(
-            top: 220,
-            left: 120,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  color: Colors.transparent,
-                  child: ClipPath(
-                    clipBehavior: Clip.hardEdge,
-                    clipper: ShapeBorderClipper(
-                      shape: rectangle,
-                      textDirection: Directionality.maybeOf(context),
-                    ),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                       // shape: BoxShape.circle,
-                        color: Colors.transparent,
-                        */
-          /*borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(100.0),
-                          topRight: Radius.circular(100.0),
-                          bottomRight: Radius.circular(100.0),
-                          bottomLeft: Radius.circular(100.0),
-                        ),
-                      ),
-                      height: 150,
-                      width: 160,
-                      child: Transform.scale(
-                        scale: 1.0,
-                        child: Image.asset(
-                          "assets/images/french75.jpg",
-                          fit: BoxFit.fill,
-                          // color: Colors.transparent,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-
-                Container(
-                  clipBehavior: Clip.antiAlias,
-                  height: 135,
-                  width: 105,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          width: 3,
-                          color: Colors.deepOrange),
-                      borderRadius:const BorderRadius.all(
-                          Radius.circular(20)
-                      )
-                  ),
-                ).rotate(angle: 30 * pi / 180),
-              ],
-            ),
-          ),*/
-
-          /*Positioned(
-           top: 220,
-           left: 120,
-             child: Container(
-               height: 185,
-               width: 120,
-               color: Colors.black,
-               child: Transform(
-                 alignment: Alignment.center,
-                 transform: Matrix4.rotationZ(
-                   3.1415926535897932 / 4,
-                 ),
-                 child: Image.asset('assets/images/french75.jpg',
-                   fit: BoxFit.fill,
-                   height: 185,
-                   width: 120,
-           ),
-               ),
-             )
-         ),*/
-
-         /* Positioned(
-              top: 220,
-              left: 120,
-              child: Transform(
-                alignment: Alignment.center,
-                transform: Matrix4.rotationZ(
-                  -3.1415926535897932 / 4,
-                ),
-                child: Container(
-                  height: MediaQuery.of(context).size.width / 2.3,
-                  width: MediaQuery.of(context).size.width / 2.3,
-                  decoration:
-                  const BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30.0),
-                      topRight: Radius.circular(60.0),
-                      bottomRight: Radius.circular(30.0),
-                      bottomLeft: Radius.circular(60.0),
-                    ),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(35.0),
-                      topRight: Radius.circular(60.0),
-                      bottomRight: Radius.circular(35.0),
-                      bottomLeft: Radius.circular(60.0),
-                    ),
-                    child: Transform(
-                      alignment: Alignment.center,
-                      transform: Matrix4.rotationZ(
-                        3.1415926535897932 / 4,
-                      ),
-                      child:  Positioned.fill(
-                        child: Image.asset(
-                          'assets/images/french75.jpg',
-                          fit: BoxFit.fill,
-                          height: double.infinity,
-                          width: double.infinity,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-          ),*/
         ],
       ),
     );
   }
-
-
-
-  ShapeBorder rectangle=RectangleShapeBorder(
-      borderRadius: DynamicBorderRadius.only(
-          topLeft: DynamicRadius.circular(10.toPXLength),
-          bottomRight: DynamicRadius.elliptical(60.toPXLength, 10.toPercentLength))
-  );
-
 }
