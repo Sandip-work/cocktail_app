@@ -1,7 +1,11 @@
-import 'dart:math' as math;
 
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:morphable_shape/morphable_shape.dart';
+import 'package:shape_of_view_null_safe/shape_of_view_null_safe.dart';
 import 'dart:developer';
+
+import 'package:styled_widget/styled_widget.dart' as style;
 
 class Cocktail extends StatelessWidget {
   const Cocktail({super.key});
@@ -41,6 +45,7 @@ class _French75State extends State<French75> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white70.withOpacity(0.9),
       body: Stack(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -48,14 +53,18 @@ class _French75State extends State<French75> {
             alignment: Alignment.topLeft,
             width: 150,
             height: 150,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
+            decoration:  BoxDecoration(
+              borderRadius: const BorderRadius.only(
                 bottomRight: Radius.circular(40),
               ),
               gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
-                  colors: <Color>[Color(  0xff77C2DC), Color(0xff6859EA)]),
+                  colors: <Color>[
+                    const Color(0xff77C2DC).withOpacity(0.5),
+                    const Color(0xff6859EA),
+                  ],
+              ),
             ),
             child: const Padding(
               padding:
@@ -76,12 +85,16 @@ class _French75State extends State<French75> {
             child: Container(
               width: 150,
               height: 280,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(40)),
+              decoration:  BoxDecoration(
+                borderRadius: const BorderRadius.only(topLeft: Radius.circular(40)),
                 gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: <Color>[Color(0xff6859EA), Color(0xff77C2DC)]),
+                    begin: const Alignment(1.0, -1.0),
+                    end:const  Alignment(-1.0, -1.0),
+                    colors: <Color>[
+                      const Color(0xff6859EA).withOpacity(0.7),
+                const Color(0xff77C2DC),
+    ],
+                ),
               ),
             ),
           ),
@@ -241,7 +254,7 @@ class _French75State extends State<French75> {
                   ),
                   const Padding(
                     padding: EdgeInsets.only(left: 16, bottom: 8, right: 16),
-                    child: Text("1. Add the gin, lemon juice and simple syrup "
+                    child: Text("1. A dd the gin, lemon juice and simple syrup "
                         "to a shaker with ice and shake until well-chilled."),
                   ),
                   const Padding(
@@ -265,6 +278,7 @@ class _French75State extends State<French75> {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.white,
+                          shadowColor: Colors.transparent,
                         ),
                         child: Ink(
                           decoration: const BoxDecoration(
@@ -298,6 +312,7 @@ class _French75State extends State<French75> {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.white,
+                          shadowColor: Colors.transparent,
                         ),
                         child: Ink(
                           decoration: const BoxDecoration(
@@ -332,7 +347,7 @@ class _French75State extends State<French75> {
               ),
             ),
           ),
-         Positioned(
+         /*Positioned(
            top: 220,
            left: 120,
            child: Transform.rotate(
@@ -362,9 +377,10 @@ class _French75State extends State<French75> {
                  child: SizedBox(
                    height: 175,
                    width: 165,
-                   child: RotatedBox(
+                   child: RotationTransition(
+                     turns: ,
                      // angle: 240,
-                     quarterTurns: 1,
+                    // quarterTurns: (0.91).toInt(),
                      child: Image.asset(
                          'assets/images/french75.jpg',
                        fit: BoxFit.fill,
@@ -375,9 +391,94 @@ class _French75State extends State<French75> {
                ),
              ),
            ),
-         ),
+         ),*/
 
-         /*Positioned(
+          Positioned(
+            top: 230,
+            left: 120,
+            child: RotationTransition(
+              turns: const AlwaysStoppedAnimation(15 / 360),
+              child: ShapeOfView(
+                shape: RoundRectShape(
+                   // numberOfSides: 4,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(30.0),
+                      topRight: Radius.circular(60.0),
+                      bottomRight: Radius.circular(30.0),
+                      bottomLeft: Radius.circular(60.0),
+                    ),
+                    borderColor: Colors.white, //optional
+                    borderWidth: 10.0,
+
+                ),
+
+                height: MediaQuery.of(context).size.height*0.2,
+                width:MediaQuery.of(context).size.width*0.4,
+                child: Image.asset(
+                    "assets/images/french75.jpg",
+                  fit: BoxFit.fill,
+              ),
+              ),
+            ),
+          ),
+          /*Positioned(
+            top: 220,
+            left: 120,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  color: Colors.transparent,
+                  child: ClipPath(
+                    clipBehavior: Clip.hardEdge,
+                    clipper: ShapeBorderClipper(
+                      shape: rectangle,
+                      textDirection: Directionality.maybeOf(context),
+                    ),
+                    child: Container(
+                      decoration: const BoxDecoration(
+                       // shape: BoxShape.circle,
+                        color: Colors.transparent,
+                        */
+          /*borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(100.0),
+                          topRight: Radius.circular(100.0),
+                          bottomRight: Radius.circular(100.0),
+                          bottomLeft: Radius.circular(100.0),
+                        ),
+                      ),
+                      height: 150,
+                      width: 160,
+                      child: Transform.scale(
+                        scale: 1.0,
+                        child: Image.asset(
+                          "assets/images/french75.jpg",
+                          fit: BoxFit.fill,
+                          // color: Colors.transparent,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                Container(
+                  clipBehavior: Clip.antiAlias,
+                  height: 135,
+                  width: 105,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                          width: 3,
+                          color: Colors.deepOrange),
+                      borderRadius:const BorderRadius.all(
+                          Radius.circular(20)
+                      )
+                  ),
+                ).rotate(angle: 30 * pi / 180),
+              ],
+            ),
+          ),*/
+
+          /*Positioned(
            top: 220,
            left: 120,
              child: Container(
@@ -448,4 +549,13 @@ class _French75State extends State<French75> {
       ),
     );
   }
+
+
+
+  ShapeBorder rectangle=RectangleShapeBorder(
+      borderRadius: DynamicBorderRadius.only(
+          topLeft: DynamicRadius.circular(10.toPXLength),
+          bottomRight: DynamicRadius.elliptical(60.toPXLength, 10.toPercentLength))
+  );
+
 }
